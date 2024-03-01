@@ -42,9 +42,12 @@ export default function Navbarr() {
                     </NavbarItem>
 
                     <NavbarItem>
-                        <Button as={Link} color="secondary" href="#" variant="flat">
+                        <a href="https://github.com/Shahzaibxo" target="_blank">
+
+                        <Button as={Link} color="secondary"  variant="flat">
                             Github
                         </Button>
+                        </a>
                     </NavbarItem>
 
                 </NavbarContent>
