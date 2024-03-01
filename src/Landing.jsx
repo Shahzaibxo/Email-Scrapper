@@ -65,8 +65,8 @@ export default function Landingg() {
             </div>
 
             <form>
-              <div className="right-container">
-                <div className="input-container">
+              <div className="right-container flex-col flex">
+                <div className="input-container flex flex-col">
                   <div className=" flex w-full flex-wrap md:flex-nowrap gap-5 border-none">
 
                     <Input type="text" style={{ marginTop: "5px" }} value={weblink} onChange={(e) => setWeblink(e.target.value)} className="input-field" label="Enter Website Link Here" startContent={<i class="fa-solid fa-magnifying-glass"></i>} />
