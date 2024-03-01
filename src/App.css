@@ -1,0 +1,96 @@
+.wtf {
+  padding: 10px 0px;
+  text-align: center;
+  
+}
+.body {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.const {
+  background-image: url(./assets/img.jpg);
+  background-size: cover;
+  box-shadow: inset 0 0 0 20000px rgba(0, 0, 0, 0.6);
+}
+
+
+/* @media (max-width: 600px) {
+  .title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    color: #ffffff;
+    
+
+  }
+
+  .input-container {
+    flex-direction: column;
+
+  }
+
+  .input-field {
+    width: 60%;
+    margin-bottom: 10px;
+  }
+} */
+
+.heart {
+  color: #ff0000;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
+.right-container {
+  padding-right: 2%;
+  background-image: url(./assets/luke-chesser-pJadQetzTkI-unsplash\ \(1\).jpg);
+  align-items: center;
+
+}
+
+.description{
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.input-container {
+  background-image: url(./assets/luke-chesser-pJadQetzTkI-unsplash\ \(1\).jpg);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-field {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.input-field {
+  width: 60%;
+  border: none;
+}
+
+.love {
+  width: 50%;
+  margin: auto;
+}
