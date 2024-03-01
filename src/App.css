@@ -51,7 +51,6 @@
 
 .right-container {
   padding-right: 2%;
-  background-image: url(./assets/luke-chesser-pJadQetzTkI-unsplash\ \(1\).jpg);
   align-items: center;
 
 }
@@ -62,7 +61,6 @@
 }
 
 .input-container {
-  background-image: url(./assets/luke-chesser-pJadQetzTkI-unsplash\ \(1\).jpg);
   display: flex;
   align-items: center;
   gap: 10px;
