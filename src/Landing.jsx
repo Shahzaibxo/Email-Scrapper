@@ -21,7 +21,7 @@ export default function Landingg() {
       if (weblink === "") {
         alert("Enter a Valid Web Address to Continue")
       }
-      const response = await fetch(`http://127.0.0.1:5000/`,
+      const response = await fetch(`http://127.0.0.1:5000/email`,
         {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
@@ -36,7 +36,7 @@ export default function Landingg() {
       }
       else {
         alert("there was an error scanning the website, make sure you enter a complete web address")
-      }
+      } 
     } finally {
       setIsloading(false)
     }
@@ -61,7 +61,7 @@ export default function Landingg() {
           <div className='container'>
             <div className="left-container">
               <div className="title">Email scrapper</div>
-              <div className="description" style={{ color: "white", paddingBottom: "10px" }}>This project is built on React & Flask as backend. <br /> Enter any valid Web address (i.e: <u>https://www.tourradar.com</u>) to scrap emails </div>
+              <div className="description" style={{ color: "white", paddingBottom: "10px" }}>This project is built on React & Flask as backend. <br /> Deployed on AWS EC2 ubuntu instance using Ngnix server & Gunicorn as a WSGI.  <br /> Enter any valid Web address (i.e: <u>https://www.tourradar.com</u>) to scrap emails </div>
             </div>
 
             <form>
@@ -76,13 +76,13 @@ export default function Landingg() {
                     {isloading ? <Button color="primary" className='mr-2' isLoading>
                       Loading
                     </Button> :
-                      <Button onClick={isAuthenticated ? fetchdata : onOpen} color="primary" className="button mr-2" variant="ghost" startContent={<i style={{ paddingTop: "5px" }} className="fa-solid fa-envelope"></i>}>
+                      <Button onClick={isAuthenticated ? fetchdata : onOpen} color="primary" className="button mr-2" startContent={<i style={{ paddingTop: "5px" }} className="fa-solid fa-envelope"></i>}>
                         Start Fetching
                       </Button>
                     }
-                    {emails === "" ? <Button color="primary" isDisabled onClick={isAuthenticated ? () => downloads() : onOpen} className="button" variant="ghost" startContent={<i style={{ paddingTop: "5px" }} className="fa-solid fa-download"></i>}>
+                    {emails === "" ? <Button color="default" isDisabled onClick={isAuthenticated ? () => downloads() : onOpen} className="button" startContent={<i style={{ paddingTop: "5px" }} className="fa-solid fa-download"></i>}>
                       Download Data
-                    </Button> : <Button color="primary" onClick={isAuthenticated ? () => downloads() : onOpen} className="button" variant="ghost" startContent={<i style={{ paddingTop: "5px" }} className="fa-solid fa-download"></i>}>
+                    </Button> : <Button color="primary" onClick={isAuthenticated ? () => downloads() : onOpen} className="button" startContent={<i style={{ paddingTop: "5px" }} className="fa-solid fa-download"></i>}>
                       Download Data
                     </Button>}
                   </div>
