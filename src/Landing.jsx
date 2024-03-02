@@ -21,7 +21,7 @@ export default function Landingg() {
       if (weblink === "") {
         alert("Enter a Valid Web Address to Continue")
       }
-      const response = await fetch(`http://127.0.0.1:5000/email`,
+      const response = await fetch(`http://13.127.91.225/`,
         {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
