@@ -21,7 +21,7 @@ export default function Landingg() {
       if (weblink === "") {
         alert("Enter a Valid Web Address to Continue")
       }
-      const response = await fetch(`https://0q2w6o3m9a.execute-api.ap-south-1.amazonaws.com/email`,
+      const response = await fetch(`http://43.205.103.102/`,
         {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
