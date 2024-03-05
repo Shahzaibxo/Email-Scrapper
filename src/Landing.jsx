@@ -71,33 +71,7 @@ export default function Landingg() {
 
                     <Input type="text" style={{ marginTop: "5px" }} value={weblink} onChange={(e) => setWeblink(e.target.value)} className="input-field" label="Enter Website Link Here" startContent={<i class="fa-solid fa-magnifying-glass"></i>} />
                   </div>
-                  <div className='wtf'>
-
-                    {isloading ? <Button color="primary" className='mr-2' isLoading>
-                      Loading
-                    </Button> :
-                      <Button onClick={isAuthenticated ? fetchdata : onOpen} color="primary" className="button mr-2" startContent={<i style={{ paddingTop: "5px" }} className="fa-solid fa-envelope"></i>}>
-                        Start Fetching
-                      </Button>
-                    }
-                    {emails === "" ? <Button color="default" isDisabled onClick={isAuthenticated ? () => downloads() : onOpen} className="button" startContent={<i style={{ paddingTop: "5px" }} className="fa-solid fa-download"></i>}>
-                      Download Data
-                    </Button> : <Button color="primary" onClick={isAuthenticated ? () => downloads() : onOpen} className="button" startContent={<i style={{ paddingTop: "5px" }} className="fa-solid fa-download"></i>}>
-                      Download Data
-                    </Button>}
-                  </div>
-
-                </div>
-              </div>
-            </form>
-            <div className='love' style={{ textAlign: "center", color: "white" }}>
-              Made with 💪 & <span className="heart">♥</span>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <Modal isOpen={isOpen} backdrop='blur' onOpenChange={onOpenChange}>
+                  <div><Modal isOpen={isOpen} backdrop='blur' onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
             <>
@@ -124,7 +98,34 @@ export default function Landingg() {
             </>
           )}
         </ModalContent>
-      </Modal>
+      </Modal></div>
+                  <div className='wtf'>
+
+                    {isloading ? <Button color="primary" className='mr-2' isLoading>
+                      Loading
+                    </Button> :
+                      <Button onClick={isAuthenticated ? fetchdata : onOpen} color="primary" className="button mr-2" startContent={<i style={{ paddingTop: "5px" }} className="fa-solid fa-envelope"></i>}>
+                        Start Fetching
+                      </Button>
+                    }
+                    {emails === "" ? <Button color="default" isDisabled onClick={isAuthenticated ? () => downloads() : onOpen} className="button" startContent={<i style={{ paddingTop: "5px" }} className="fa-solid fa-download"></i>}>
+                      Download Data
+                    </Button> : <Button color="primary" onClick={isAuthenticated ? () => downloads() : onOpen} className="button" startContent={<i style={{ paddingTop: "5px" }} className="fa-solid fa-download"></i>}>
+                      Download Data
+                    </Button>}
+                  </div>
+
+                </div>
+              </div>
+            </form>
+            <div className='love' style={{ textAlign: "center", color: "white" }}>
+              Made with 💪 & <span className="heart">♥</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
     </>
   )
 }
