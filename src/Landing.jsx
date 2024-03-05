@@ -9,6 +9,7 @@ import { useAuth0 } from "@auth0/auth0-react"
 
 export default function Landingg() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   const [isloading, setIsloading] = useState(false)
   const [emails, setEmails] = useState("")
   const [weblink, setWeblink] = useState("")
@@ -71,11 +72,11 @@ export default function Landingg() {
 
                     <Input type="text" style={{ marginTop: "5px" }} value={weblink} onChange={(e) => setWeblink(e.target.value)} className="input-field" label="Enter Website Link Here" startContent={<i class="fa-solid fa-magnifying-glass"></i>} />
                   </div>
-                  <div><Modal isOpen={isOpen} backdrop='blur' onOpenChange={onOpenChange}>
+                  <div><Modal placement="center" isOpen={isOpen} backdrop='blur' onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">Cannot Proceed until Signed in</ModalHeader>
+              <ModalHeader className="flex flex-col">Cannot Proceed until Signed in</ModalHeader>
               <ModalBody>
                 <p>
                   To ensure a safe and enjoyable experience for all users, we require <b>signing in</b> before accessing <i>webscrapper</i>.
