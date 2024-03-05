@@ -21,7 +21,7 @@ export default function Landingg() {
       if (weblink === "") {
         alert("Enter a Valid Web Address to Continue")
       }
-      const response = await fetch(`http://43.205.103.102/`,
+      const response = await fetch(`https://projectapi.cyberguards.info`,
         {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
@@ -61,7 +61,7 @@ export default function Landingg() {
           <div className='container'>
             <div className="left-container">
               <div className="title">Email scrapper</div>
-              <div className="description" style={{ color: "white", paddingBottom: "10px" }}>This project is built on React & Flask as backend. <br /> Deployed on AWS EC2 ubuntu instance using Ngnix server & Gunicorn as a WSGI.  <br /> Enter any valid Web address (i.e: <u>https://www.tourradar.com</u>) to scrap emails </div>
+              <div className="description" style={{ color: "white", paddingBottom: "10px" }}>Built on React & Flask as backend, Next UI for aesthetic styling. <br />Backend manually deployed on EC2 using Nginx server & Gunicorn as a WSGI.<br />Frontend deployed on AWS amplify (serverless).<br/>Enter any valid Web address (i.e: <u>https://www.tourradar.com</u>) to scrap emails </div>
             </div>
 
             <form>
