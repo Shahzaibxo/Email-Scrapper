@@ -22,7 +22,7 @@ export default function Landingg() {
       if (weblink === "") {
         alert("Enter a Valid Web Address to Continue")
       }
-      const response = await fetch(`https://projectapi.cyberguards.info`,
+      const response = await fetch(`https://testapi.cyberguards.info`,
         {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
