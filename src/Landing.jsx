@@ -17,12 +17,12 @@ export default function Landingg() {
 
   async function fetchdata() {
     setIsloading(true)
-
+    setEmails("")
     try {
       if (weblink === "") {
         alert("Enter a Valid Web Address to Continue")
       }
-      const response = await fetch(`https://testapi.cyberguards.info`,
+      const response = await fetch(`http://3.109.212.125:8000/`,
         {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
@@ -34,10 +34,11 @@ export default function Landingg() {
         const data = await response.json();
         // const dataemails = data.emails.join(", ")
         setEmails(data);
+
       }
       else {
         alert("there was an error scanning the website, make sure you enter a complete web address")
-      } 
+      }
     } finally {
       setIsloading(false)
     }
@@ -62,7 +63,7 @@ export default function Landingg() {
           <div className='container'>
             <div className="left-container">
               <div className="title">Email scrapper</div>
-              <div className="description" style={{ color: "white", paddingBottom: "10px" }}>Built on React & Flask as backend, Next UI for aesthetic styling. <br />Backend manually deployed on EC2 using Nginx server & Gunicorn as a WSGI.<br />Frontend deployed on AWS amplify (serverless).<br/>Enter any valid Web address (i.e: <u>https://www.tourradar.com</u>) to scrap emails </div>
+              <div className="description" style={{ color: "white", paddingBottom: "10px" }}>Built on React & Flask as backend, Next UI for aesthetic styling. <br />Backend manually deployed on EC2 using Nginx server & Gunicorn as a WSGI.<br />Frontend deployed on AWS amplify (serverless).<br />Enter any valid Web address (i.e: <u>https://www.tourradar.com</u>) to scrap emails </div>
             </div>
 
             <form>
@@ -72,34 +73,6 @@ export default function Landingg() {
 
                     <Input type="text" style={{ marginTop: "5px" }} value={weblink} onChange={(e) => setWeblink(e.target.value)} className="input-field" label="Enter Website Link Here" startContent={<i class="fa-solid fa-magnifying-glass"></i>} />
                   </div>
-                  <div><Modal placement="center" isOpen={isOpen} backdrop='blur' onOpenChange={onOpenChange}>
-        <ModalContent>
-          {(onClose) => (
-            <>
-              <ModalHeader className="flex flex-col">Cannot Proceed until Signed in</ModalHeader>
-              <ModalBody>
-                <p>
-                  To ensure a safe and enjoyable experience for all users, we require <b>signing in</b> before accessing <i>webscrapper</i>.
-                </p>
-                <p>
-                  This helps prevent <i>unauthorized spamming and misuse</i>, safeguarding the integrity and functionality of our platform.
-                </p>
-                <p>
-                  Thank you for your understanding and cooperation in maintaining a secure environment for everyone. 🙏
-                </p>
-              </ModalBody>
-              <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
-                  Close
-                </Button>
-                <Button color="primary" onPress={loginWithRedirect}>
-                  Sign In
-                </Button>
-              </ModalFooter>
-            </>
-          )}
-        </ModalContent>
-      </Modal></div>
                   <div className='wtf'>
 
                     {isloading ? <Button color="primary" className='mr-2' isLoading>
@@ -111,7 +84,7 @@ export default function Landingg() {
                     }
                     {emails === "" ? <Button color="default" isDisabled onClick={isAuthenticated ? () => downloads() : onOpen} className="button" startContent={<i style={{ paddingTop: "5px" }} className="fa-solid fa-download"></i>}>
                       Download Data
-                    </Button> : <Button color="primary" onClick={isAuthenticated ? () => downloads() : onOpen} className="button" startContent={<i style={{ paddingTop: "5px" }} className="fa-solid fa-download"></i>}>
+                    </Button> : <Button color="success" onClick={isAuthenticated ? () => downloads() : onOpen} className="button" startContent={<i style={{ paddingTop: "5px" }} className="fa-solid fa-download"></i>}>
                       Download Data
                     </Button>}
                   </div>
@@ -126,7 +99,36 @@ export default function Landingg() {
           </div>
         </div>
       </div>
-      
+
+      <div>
+        <Modal placement="center" isOpen={isOpen} backdrop='blur' onOpenChange={onOpenChange}>
+          <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalHeader className="flex flex-col">Cannot Proceed until Signed in</ModalHeader>
+                <ModalBody>
+                  <p>
+                    To ensure a safe and enjoyable experience for all users, we require <b>signing in</b> before accessing <i>webscrapper</i>.
+                  </p>
+                  <p>
+                    This helps prevent <i>unauthorized spamming and misuse</i>, safeguarding the integrity and functionality of our platform.
+                  </p>
+                  <p>
+                    Thank you for your understanding and cooperation in maintaining a secure environment for everyone. 🙏
+                  </p>
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="danger" variant="light" onPress={onClose}>
+                    Close
+                  </Button>
+                  <Button color="primary" onPress={loginWithRedirect}>
+                    Sign In
+                  </Button>
+                </ModalFooter>
+              </>
+            )}
+          </ModalContent>
+        </Modal></div>
     </>
   )
 }
