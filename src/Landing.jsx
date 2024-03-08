@@ -63,7 +63,7 @@ export default function Landingg() {
           <div className='container'>
             <div className="left-container">
               <div className="title">Email scrapper</div>
-              <div className="description" style={{ color: "white", paddingBottom: "10px" }}>Built on React & Flask as backend, Next UI for aesthetic styling. <br />Backend manually deployed on EC2 using Nginx server & Gunicorn as a WSGI.<br />Frontend deployed on AWS amplify (serverless).<br />Enter any valid Web address (i.e: <u>https://www.tourradar.com</u>) to scrap emails </div>
+              <div className="description" style={{ color: "white", paddingBottom: "10px" }}>Built on React & Flask as backend, Next UI for aesthetic styling. <br />Backend manually deployed on EC2 using Nginx proxy server & Gunicorn as a WSGI.<br />Frontend deployed on AWS amplify (serverless).<br />Enter any valid Web address (i.e: <u>https://www.geeksofkolachi.com</u>) to scrap emails </div>
             </div>
 
             <form>
