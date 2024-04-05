@@ -1,4 +1,7 @@
 
+![Web-scrapper - Google Chrome 2024-04-06 03-29-49 (1)](https://github.com/Shahzaibxo/Email-Scrapper/assets/145616378/934e6c6d-bd30-40f5-bb7d-cd465c23d600)
+
+
 # Email scrapper
 
 Project link: https://master.d9a5wyjnzb4jd.amplifyapp.com/
